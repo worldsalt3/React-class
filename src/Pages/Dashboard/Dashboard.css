@@ -1,3 +1,7 @@
 .dashboard {
     display: flex;
 }
+
+.card-container {
+    display: flex;
+}
