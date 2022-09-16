@@ -1,4 +1,4 @@
-import { Component, useState } from 'react'
+import { Component, } from 'react'
 import './Nav.style.css'
 
 // export default function Nav() {
@@ -52,8 +52,8 @@ export default class Nav extends Component {
           <li>{this.state.services}</li>
           <li>{this.state.contact}</li> */}
         {
-            this.state.map((item) => {
-                return <li>{item}</li>
+            this.state.map((item, index) => {
+                return <li key={index}>{item}</li>
             })
         }
         </ul>
