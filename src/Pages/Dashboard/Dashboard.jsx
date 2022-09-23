@@ -3,7 +3,8 @@ import Nav from '../../Component/Nav/Nav.component'
 // import { Link } from 'react-router-dom'
 // import Card from '../../Component/Card/Card'
 import {useState } from 'react'
-import ContactForm from '../../Component/Form/ContactForm'
+import Component1 from '../../Component/Component1'
+// import ContactForm from '../../Component/Form/ContactForm'
 // import Img2 from '../../assets/img2.svg'
 // import Img3 from '../../assets/img3.jpg'
 
@@ -12,6 +13,8 @@ import ContactForm from '../../Component/Form/ContactForm'
 
 
 const Dashboard = () => {
+  const [name, setName] = useState('Hammed')
+  const [color, setColor] = useState(0)
 
   // const [toggle, setToggle] = useState(false)
 
@@ -20,10 +23,10 @@ const Dashboard = () => {
 //   }
 
   //  const data = [
-  //     {id: 1, content: 'this is our first card', header: 'First Card', img : Img3},
-  //     {id: 2, content: 'this is our second card', header: 'second Card', img: Img2},
-  //     {id: 3, content: 'this is our Third card', header: 'Third Card', img: Img3},
-  //     {id: 4, content: 'this is our fourth card', header: 'Fourth Card', img: Img2}
+  //     {id: 1, content: 'this is our first card', header: 'First Card', img : Img3, position: 'right'},
+  //     {id: 2, content: 'this is our second card', header: 'second Card', img: Img2, position: 'left'},
+  //     {id: 3, content: 'this is our Third card', header: 'Third Card', img: Img3, position: 'right'},
+  //     {id: 4, content: 'this is our fourth card', header: 'Fourth Card', img: Img2, position: 'left'}
 
   //   ]
 
@@ -32,13 +35,20 @@ const Dashboard = () => {
     <div>
       <Nav />
       <h1>DASHBOARD</h1>
+      <Component1 color={color} name={name}/>
+      <button onClick={() => {
+        setName('Daniel')
+        setColor((prevColor) => prevColor + 1 )
+        }}>change name</button>
+
+        
       {/* <h3>{content}</h3> */}
       <div>
-        <ContactForm />
+        {/* <ContactForm /> */}
         {/* {data.map(
           (item, index) => { 
-          const {img, content, header} = item
-        return <Card header={header} content={content} key={index} img={img}
+          const {img, content, header, id, position} = item
+        return <Card header={header} content={content} key={index} img={img} id={id} position={position}
       />})} */}
 
         {/* <Card
@@ -70,6 +80,7 @@ const Dashboard = () => {
 }
 
 export default Dashboard
+
 // export default class Dashboard extends Component {
 //   constructor(props) {
 //     super(props)

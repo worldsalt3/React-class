@@ -4,3 +4,11 @@
     border: 1px solid black;
     border-radius: 5px;
 }
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}

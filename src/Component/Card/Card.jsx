@@ -1,11 +1,14 @@
+import { useState } from 'react'
 import './Card.css'
 
 // import  { Component } from 'react'
 
 const Card = (props) => {
-  const {content, header, img} = props
+
+  const {content, header, img, id, position} = props
   return (
     <div className='card'>
+      <h1 className={position === 'right' ? 'right' : 'left'}>{id}</h1>
       <img src={img} alt='' srcset='' />
       <h3>{header}</h3>
       <p>{content}</p>

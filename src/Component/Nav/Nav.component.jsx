@@ -1,8 +1,8 @@
-import { useState} from 'react'
+import { useState, memo} from 'react'
 import './Nav.style.css'
 
 
-export default function Nav() {
+function Nav() {
   const [menuData, setMenuData] = useState([
   'Menu',
     'About Us',
@@ -41,6 +41,8 @@ export default function Nav() {
   )
 }
 
+
+export default memo(Nav)
 // export default class Nav extends Component {
 //   constructor(props) {
 //     super(props)
