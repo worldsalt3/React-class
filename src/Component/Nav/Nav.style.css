@@ -1,8 +1,10 @@
 .nav {
-  padding: 30px;
+  padding: 10px;
   display: flex;
+  justify-content: space-around;
   background: rgb(112, 232, 202);
   color: white;
+  align-items: center;
 }
 
 .nav-ul li {
@@ -11,4 +13,19 @@
 
 .nav-ul {
   display: flex;
+}
+
+.hamburger {
+  font-size: 50px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .nav-ul {
+    display: none;
+  }
+
+  .nav-ul-display {
+    display: block;
+  }
 }

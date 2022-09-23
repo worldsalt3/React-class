@@ -1,27 +1,70 @@
 import './Dashboard.css'
-import { Link } from 'react-router-dom'
+import Nav from '../../Component/Nav/Nav.component'
+// import { Link } from 'react-router-dom'
 // import Card from '../../Component/Card/Card'
 import {useState } from 'react'
 import ContactForm from '../../Component/Form/ContactForm'
+// import Img2 from '../../assets/img2.svg'
+// import Img3 from '../../assets/img3.jpg'
+
+
+
 
 
 const Dashboard = () => {
 
-  const [content, setContent] = useState(1)
+  // const [toggle, setToggle] = useState(false)
 
- function handleClick(){
-    return setContent(prevContent => prevContent + 1)
-  }
+//  function handleClick(){
+//     return setToggle(prevState => !prevState)
+//   }
+
+  //  const data = [
+  //     {id: 1, content: 'this is our first card', header: 'First Card', img : Img3},
+  //     {id: 2, content: 'this is our second card', header: 'second Card', img: Img2},
+  //     {id: 3, content: 'this is our Third card', header: 'Third Card', img: Img3},
+  //     {id: 4, content: 'this is our fourth card', header: 'Fourth Card', img: Img2}
+
+  //   ]
 
 
   return (
     <div>
+      <Nav />
       <h1>DASHBOARD</h1>
-      <h3>{content}</h3>
-      <button onClick={handleClick}>change content</button>
+      {/* <h3>{content}</h3> */}
+      <div>
+        <ContactForm />
+        {/* {data.map(
+          (item, index) => { 
+          const {img, content, header} = item
+        return <Card header={header} content={content} key={index} img={img}
+      />})} */}
+
+        {/* <Card
+          header={data[0].header}
+          content={data[0].content}
+          key={data[0].id}
+          img={data[0].img}
+        />
+        <Card
+          header={data[1].header}
+          content={data[1].content}
+          key={data[1].id}
+          img={data[1].img}
+        />
+        <Card
+          header={data[2].header}
+          content={data[2].content}
+          key={data[2].id}
+          img={data[2].img}
+        /> */}
+        {/* <button onClick={handleClick}>Toggle</button> */}
+      </div>
+      {/* <button onClick={handleClick}>change content</button>
       <br />
       <Link to='settings'>go to settings Page</Link>
-      <ContactForm />
+      <ContactForm /> */}
     </div>
   )
 }
@@ -53,7 +96,7 @@ export default Dashboard
 //           {/* <Card content='red'/> */}
 //           {
 //             data.map((item) => {
-//               return <Card content={item.content} header={item.header} key={item.id}/>
+//               return <Card content={item.content} header={item.header}  key={item.id}/>
 //             })
 //           }
 //           {/* <Card content='this is our first card' header={h3}/>

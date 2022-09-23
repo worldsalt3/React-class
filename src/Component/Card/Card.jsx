@@ -1,12 +1,12 @@
 import './Card.css'
-import IdontKnow from '../../assets/bx_bx-map.svg'
+
 // import  { Component } from 'react'
 
 const Card = (props) => {
-  const {content, header} = props
+  const {content, header, img} = props
   return (
     <div className='card'>
-      <img src={IdontKnow} alt='' srcset='' />
+      <img src={img} alt='' srcset='' />
       <h3>{header}</h3>
       <p>{content}</p>
 
