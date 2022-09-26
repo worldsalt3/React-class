@@ -6,7 +6,7 @@ function Component2(props) {
   return (
     <>
       <h3>{student}</h3>
-      <Component3 color={color} />
+      <Component3  />
     </>
   )
 }

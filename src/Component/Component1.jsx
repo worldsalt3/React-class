@@ -1,11 +1,12 @@
 import Component2 from "./Component2"
 import { memo } from "react"
 
-const Component1 = ({ color, name }) => {
+const Component1 = () => {
   console.log('component 1 render')
+
   return (
     <>
-      <Component2 color={color} student={name} />
+      <Component2 />
     </>
   )
 }

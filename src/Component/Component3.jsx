@@ -1,12 +1,24 @@
-import {memo, useEffect, useState} from 'react'
-const Component3 = ({ color }) => {
+import { useEffect, useState, createContext} from 'react'
+
+export const WeatherContext = createContext(null)
+
+
+const Component3 = () => {
     const [searchQuery, setSearchQuery] = useState('')
     const [data, setData] = useState('')
-    let APIkey = '3b588a70808f0b4dfad48e1aa66012b3'
 
+
+   
+
+  
+
+    const handleChange = (e) => {
+        setSearchQuery(e.target.value)
+    }
+    
     useEffect(() => {
         const fetchWeather = async () => {
-           let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchQuery}&appid=${APIkey}`)
+           let response = await fetch()
            let data = await response.json()
            setData(JSON.stringify(data))
         }
@@ -14,13 +26,10 @@ const Component3 = ({ color }) => {
         fetchWeather()
     }, [searchQuery])
 
-    const handleChange = (e) => {
-        setSearchQuery(e.target.value)
-    }
 
   console.log('component 3 render')
   return (
-    <>
+    <WeatherContext.Provider value={data}>
       <input
         type='search'
         name='search'
@@ -28,12 +37,13 @@ const Component3 = ({ color }) => {
         onChange={handleChange}
       />
       <pre>{data}</pre>
+
       {/* <h3>{num}</h3>
       <p>{color}</p>
       <button onClick={() => setNum((prevNum) => prevNum + color)}>increment H3 by color</button> */}
-    </>
+    </WeatherContext.Provider>
   )
 }
 
 
-export default memo(Component3)
+export default Component3

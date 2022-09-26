@@ -2,7 +2,8 @@ import './Dashboard.css'
 import Nav from '../../Component/Nav/Nav.component'
 // import { Link } from 'react-router-dom'
 // import Card from '../../Component/Card/Card'
-import {useState } from 'react'
+import { useContext } from 'react'
+import { WeatherContext } from '../../Component/Component3'
 import Component1 from '../../Component/Component1'
 // import ContactForm from '../../Component/Form/ContactForm'
 // import Img2 from '../../assets/img2.svg'
@@ -12,11 +13,18 @@ import Component1 from '../../Component/Component1'
 
 
 
-const Dashboard = () => {
-  const [name, setName] = useState('Hammed')
-  const [color, setColor] = useState(0)
 
-  // const [toggle, setToggle] = useState(false)
+const Dashboard = () => {
+  // const [name, setName] = useState('Hammed')
+  // const [color, setColor] = useState(0)
+   
+
+  const data = useContext(WeatherContext)
+
+  
+      
+      
+      // const [toggle, setToggle] = useState(false)
 
 //  function handleClick(){
 //     return setToggle(prevState => !prevState)
@@ -29,19 +37,21 @@ const Dashboard = () => {
   //     {id: 4, content: 'this is our fourth card', header: 'Fourth Card', img: Img2, position: 'left'}
 
   //   ]
+  
+ 
 
 
   return (
     <div>
       <Nav />
       <h1>DASHBOARD</h1>
-      <Component1 color={color} name={name}/>
-      <button onClick={() => {
+      <Component1 />
+      <pre>{data}</pre>
+      {/* <button onClick={() => {
         setName('Daniel')
         setColor((prevColor) => prevColor + 1 )
-        }}>change name</button>
+        }}>change name</button> */}
 
-        
       {/* <h3>{content}</h3> */}
       <div>
         {/* <ContactForm /> */}
