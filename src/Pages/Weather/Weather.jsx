@@ -7,26 +7,34 @@ export const DataContext = createContext()
 const Weather = () => {
 
     const [searchQuery, setSearchQuery] = useState('')
+    const [city, setCity] = useState('')
      let APIkey = '3b588a70808f0b4dfad48e1aa66012b3'
 
     const [data, setData] = useState('')
 
-    const handleSearch = (e) => {
+    const handleInput = (e) => {
         let userInput = e.target.value
         setSearchQuery(userInput)
     }
 
+    const handleSearch = () => {
+      setCity(searchQuery)
+      setSearchQuery('')
+    }
+
+
+
     useEffect(() => {
         let fetchWeatherApi = async () => {
             let res = await fetch(
-              `https://api.openweathermap.org/data/2.5/weather?q=${searchQuery}&appid=${APIkey}`
+              `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIkey}`
             )
             let data = await res.json()
             setData(data) 
         }
 
         fetchWeatherApi()
-    }, [searchQuery])
+    }, [city])
 
 
     console.log(data)
@@ -38,8 +46,10 @@ const Weather = () => {
           type='search'
           name='search'
           value={searchQuery}
-          onChange={handleSearch}
+          onChange={handleInput}
         />
+        <br />
+        <button onClick={handleSearch}>Search city</button>
         <WeatherComponent />
       </div>
     </DataContext.Provider>
