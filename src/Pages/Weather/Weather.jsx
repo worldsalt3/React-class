@@ -23,8 +23,8 @@ const Weather = () => {
     }
 
 
-
     useEffect(() => {
+   
         let fetchWeatherApi = async () => {
             let res = await fetch(
               `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIkey}`
@@ -34,6 +34,7 @@ const Weather = () => {
         }
 
         fetchWeatherApi()
+  
     }, [city])
 
 

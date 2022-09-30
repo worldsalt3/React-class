@@ -7,6 +7,7 @@ import Weather from './Pages/Weather/Weather'
 import Settings from './Pages/Settingspage/Settings'
 import TailwindExample from './Pages/TailwindExample'
 import UseRef from './Pages/UseRef/UseRef'
+import UseReducer from './Pages/useReducer/UseReducer'
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path='weather' element={<Weather />} />
         <Route path='tailwind' element={<TailwindExample />} />
         <Route path='UseRef' element={<UseRef />} />
+        <Route path='useReducer' element={<UseReducer />} />
       </Routes>
     </>
   )
