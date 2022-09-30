@@ -2,7 +2,7 @@
 
 import {useReducer, useState} from 'react'
 
-const INITIAL_STATE = ['I want to practice freecodecamp']
+const INITIAL_STATE = []
 
 
 const todoReducer = (state, action) => {
@@ -34,8 +34,8 @@ const UseReducer = () => {
          setItem('')
     }
 
-    const deleteTodo = () => {
-        dispatch({type: ''})
+    const deleteTodo = (index) => {
+        dispatch({type: 'DELETE', id: index})
     }
     
 
@@ -47,7 +47,7 @@ const UseReducer = () => {
             {
                 state.map((item, index) => 
                     {
-                  return   <li key={index}>{item}  <button onClick={deleteTodo}>DELETE</button></li>
+                  return   <li key={index}>{item}  <button onClick={() => deleteTodo(index)}>DELETE</button></li>
                 }
                 )
             }
